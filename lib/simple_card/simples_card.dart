@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class SimpleCard extends StatefulWidget {
-  SimpleCard({Key? key}) : super(key: key);
+class SimpleCard extends StatelessWidget {
+  const SimpleCard({Key? key}) : super(key: key);
 
-  @override
-  State<SimpleCard> createState() => _SimpleCardState();
-}
-
-class _SimpleCardState extends State<SimpleCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,3 +15,4 @@ class _SimpleCardState extends State<SimpleCard> {
     );
   }
 }
+
