@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_tools/home.dart';
+import 'package:projeto_tools/login/page_login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +15,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Tools'),
+      home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
+
+
 
 

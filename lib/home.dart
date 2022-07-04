@@ -3,22 +3,13 @@ import 'package:projeto_tools/consts/text_form_field.dart';
 import 'package:projeto_tools/simple_card/simples_card.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const MyHomePage({Key? key,}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +17,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
+            boxShadow: const [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 5,
+                        blurRadius: 20,
+                        offset: Offset(3.00, 3.00),
+                      )
+                    ],
             borderRadius: BorderRadius.all(Radius.circular(30)),
             color: Colors.white,
           ),

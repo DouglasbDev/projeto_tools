@@ -5,7 +5,7 @@ class CustomTextField extends StatelessWidget {
   final String? hint;
   final IconData? icon;
   final IconData? prefix;
-  final Widget? suffix;
+  final IconData? suffix;
   final String? Function(String? text)? validator;
   final void Function(String? text)? onSaved;
   final void Function(String text)? onChanged;
@@ -56,7 +56,7 @@ class CustomTextField extends StatelessWidget {
             borderSide: BorderSide(color: Color.fromARGB(255, 255, 0, 0))
             ),
           icon: icon == null ? null : Icon(icon),
-          suffixIcon: suffix,
+          suffixIcon: suffix == null ? null : Icon(suffix),
           prefixIcon: prefix == null ? null : Icon(prefix),
         )           
       ),
