@@ -44,13 +44,12 @@ class _page_loginState extends State<page_login> {
                    child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(50),
+                        padding: EdgeInsets.all(30),
                         child: Image.asset('assets/images/logo_tools.png', 
                         fit: BoxFit.contain,
                         width: MediaQuery.of(context).size.height / 3,
                         )
                         ),
-                      const SizedBox(height: 5,),
                       const CustomTextField(
                         hint: 'Login',
                         suffix: Icons.alternate_email,
@@ -65,8 +64,20 @@ class _page_loginState extends State<page_login> {
                     onPressed: (){}, 
                     child: const Text('Entrar'),
                     style:  ButtonStyle(
+                      fixedSize:  MaterialStateProperty.resolveWith((states) {
+                        if(states.contains(MaterialState.pressed)){
+                          
+                        }
+                        if(states.contains(MaterialState.hovered)){
+                          
+                        }
+                          return const Size(300, 50);
+                      }),
                       backgroundColor: MaterialStateProperty.resolveWith<Color?>((states) {
                         if(states.contains(MaterialState.pressed)){
+                          return Colors.black;
+                        }
+                        if(states.contains(MaterialState.hovered)){
                           return Colors.red;
                         }
                         return Colors.blue;
@@ -74,6 +85,17 @@ class _page_loginState extends State<page_login> {
                       
                     ),
                     ),
+                    SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('precisa de ajuda?'),
+                        TextButton(
+                         onPressed: (){},
+                         child: Text("Suporte"),
+                         ),
+                      ],
+                    )
                     ],
                    ),
                  ),   
