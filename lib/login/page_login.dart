@@ -19,51 +19,65 @@ class _page_loginState extends State<page_login> {
             width: double.infinity,
             child: Image.asset('assets/images/login.png', fit: BoxFit.cover,),
             ),
-           Container(
-                  alignment: Alignment.bottomLeft,
-                  height: MediaQuery.of(context).size.height / 1.8,
-                  width: MediaQuery.of(context).size.height / 2.0,
-                  margin: EdgeInsets.only( 
-                  left: MediaQuery.of(context).size.width/1.5, 
-                  top: MediaQuery.of(context).size.width/6)  ,
-                  decoration: BoxDecoration(
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 20,
-                        offset: Offset(3.00, 3.00),
-                      )
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-               child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(50),
-                    child: Image.asset('assets/images/logo_tools.png', 
-                    fit: BoxFit.contain,
-                    width: MediaQuery.of(context).size.height / 3,
-                    )
+           Expanded(
+             child: Container(
+                    alignment: Alignment.bottomLeft,
+                    height: MediaQuery.of(context).size.height / 1.8,
+                    width: MediaQuery.of(context).size.height / 2.0,
+                    margin: EdgeInsets.only( 
+                    left: MediaQuery.of(context).size.width/1.5, 
+                    top: MediaQuery.of(context).size.width/6)  ,
+                    decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 5,
+                          blurRadius: 20,
+                          offset: Offset(3.00, 3.00),
+                        )
+                      ],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                  const SizedBox(height: 5,),
-                  const CustomTextField(
-                    hint: 'Login',
-                    suffix: Icons.alternate_email,
-                ),
-                const SizedBox(height: 5,),
-                const CustomTextField(
-                    hint: 'Senha',
-                    suffix: Icons.lock,
-                ),
-                const SizedBox(height: 5,),
-                ElevatedButton(
-                onPressed: (){}, 
-                child: const Text('Entrar')
-                ),
-                ],
-               ),   
+                 child: SingleChildScrollView(
+                  padding: EdgeInsets.only(bottom: 150),
+                   child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(50),
+                        child: Image.asset('assets/images/logo_tools.png', 
+                        fit: BoxFit.contain,
+                        width: MediaQuery.of(context).size.height / 3,
+                        )
+                        ),
+                      const SizedBox(height: 5,),
+                      const CustomTextField(
+                        hint: 'Login',
+                        suffix: Icons.alternate_email,
+                    ),
+                    const SizedBox(height: 5,),
+                    const CustomTextField(
+                        hint: 'Senha',
+                        suffix: Icons.lock,
+                    ),
+                    const SizedBox(height: 5,),
+                    ElevatedButton(
+                    onPressed: (){}, 
+                    child: const Text('Entrar'),
+                    style:  ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith<Color?>((states) {
+                        if(states.contains(MaterialState.pressed)){
+                          return Colors.red;
+                        }
+                        return Colors.blue;
+                      }),
+                      
+                    ),
+                    ),
+                    ],
+                   ),
+                 ),   
+             ),
            ),
         ],
       ),

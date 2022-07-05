@@ -38,7 +38,7 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText,
         decoration: InputDecoration(
           filled: true,
-          //fillColor: Color(0xFFd8d8d8),
+          fillColor: Color.fromARGB(255, 255, 255, 255),
           //label: Text(label),
           //labelStyle: const TextStyle(color: Colors.black,),
           hintText: hint,
